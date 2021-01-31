@@ -1,0 +1,3 @@
+Here should bnbe your unique bot token
+Get your own from @botfather https://t.me/botfather
+Instructions are here https://core.telegram.org/bots#6-botfather
