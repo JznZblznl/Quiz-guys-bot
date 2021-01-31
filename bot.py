@@ -43,39 +43,39 @@ def get_question(answer, context, max_length=64):
 
 
 def do_NER(context):
-  s = Sentence(context)
-  NERmodel.predict(s)
-  raw = s.to_dict(tag_type='ner')
-  answers = []
-  for item in raw['entities']:
-      answers.append(item['text'])
-  if not answers:
-    answers = get_key_words(context)
-  return list(map(lambda x: x.capitalize(), list(set(map(lambda x: x.lower(), answers)))))
+    s = Sentence(context)
+    NERmodel.predict(s)
+    raw = s.to_dict(tag_type='ner')
+    answers = []
+    for item in raw['entities']:
+        answers.append(item['text'])
+    if not answers:
+        answers = get_key_words(context)
+    return list(map(lambda x: x.capitalize(), list(set(map(lambda x: x.lower(), answers)))))
 
 
 def get_questions(answers, context):
-  generated_questions = []
-  for answer in answers:
+    generated_questions = []
+    for answer in answers:
     #print('context:', context, '\n', 'answer:', answer, '\n', 'generated question:', get_question(answer, context))
-    generated_questions.append({'question':get_question(answer, context), 'answer':answer})
-  return generated_questions
+        generated_questions.append({'question':get_question(answer, context), 'answer':answer})
+    return generated_questions
 
 def generate_files_by_message(text):
-  dict_of_questions = get_questions(do_NER(text), text)
-  return save_questions_into_docx_files(text, dict_of_questions)
+    dict_of_questions = get_questions(do_NER(text), text)
+    return save_questions_into_docx_files(text, dict_of_questions)
 
 def get_key_words(text, num_nouns=3):
-  pos = {'NOUN', 'PROPN', 'ADJ'}
-  extractor = pke.unsupervised.SingleRank()
-  extractor.load_document(input=text,
+    pos = {'NOUN', 'PROPN', 'ADJ'}
+    extractor = pke.unsupervised.SingleRank()
+    extractor.load_document(input=text,
                           language='en',
                           normalization=None)
-  extractor.candidate_selection(pos=pos)
-  extractor.candidate_weighting(window=1,
+    extractor.candidate_selection(pos=pos)
+    extractor.candidate_weighting(window=1,
                                 pos=pos)
-  keyphrases = extractor.get_n_best(n=10)
-  return random.choices(list(map(lambda x: x[0], keyphrases)), k=num_nouns)  
+    keyphrases = extractor.get_n_best(n=10)
+    return random.choices(list(map(lambda x: x[0], keyphrases)), k=num_nouns)  
 
 def get_human_readable_file_names(text, file_extantion = '.docx', num_tokens_in_filename=5):
     tokens = [token for token in re.split('[^A-Za-z0-9]', text) if token]
@@ -146,8 +146,8 @@ bot.
 """
 # Load bot token from file. Get your own from @botfather https://t.me/botfather
 with open('token.txt', 'r') as txt:
-  for line in txt:
-    token = line
+    for line in txt:
+        token = line
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
