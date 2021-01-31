@@ -1,4 +1,4 @@
-# Quiz Guys Bot
+# Quiz Guy Bot
 Команда Quis Guys представляет телеграмм-бота. Проект подготовлен в рамках хакатона Pets Projects Hackaton [Data Ёлка 2020](https://ods.ai/competitions/pet_projects_2020).
 
 ## Почему этот бот?
