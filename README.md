@@ -21,12 +21,12 @@
 
 ### Необходимые библиотеки
 Нужны следующие библиотеки
-[python-telegram-bot](https://pypi.org/project/python-telegram-bot/) библиотека для телеграм-бота
-[transformers](https://pypi.org/project/transformers/) State-of-the-art Natural Language Processing for PyTorch and TensorFlow 2.0
-[sentencepiece](https://pypi.org/project/sentencepiece/) Python wrapper for SentencePiece. This API will offer the encoding, decoding and training of Sentencepiece.
-[flair](https://pypi.org/project/flair/) A very simple framework for state-of-the-art NLP
-[pke](https://github.com/boudinfl/pke) Python keyphrase extraction, тавится с git ```pip install git+https://github.com/boudinfl/pke.git```
-[python-docx](https://pypi.org/project/python-docx-1/) Create and update Microsoft Word .docx files
+* [python-telegram-bot](https://pypi.org/project/python-telegram-bot/) библиотека для телеграм-бота
+* [transformers](https://pypi.org/project/transformers/) State-of-the-art Natural Language Processing for PyTorch and TensorFlow 2.0
+* [sentencepiece](https://pypi.org/project/sentencepiece/) Python wrapper for SentencePiece. This API will offer the encoding, decoding and training of Sentencepiece.
+* [flair](https://pypi.org/project/flair/) A very simple framework for state-of-the-art NLP
+* [pke](https://github.com/boudinfl/pke) Python keyphrase extraction, тавится с git ```pip install git+https://github.com/boudinfl/pke.git```
+* [python-docx](https://pypi.org/project/python-docx-1/) Create and update Microsoft Word .docx files
 
 ## Наша комманда
 Команда Quis Guys 
